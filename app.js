@@ -100,17 +100,22 @@ class MusicRecommender {
         const rated = Object.keys(this.userRatings);
         const container = document.getElementById('recommendationsContainer');
         const emptyState = document.getElementById('emptyState');
+        const panelTitle = document.getElementById('panelTitle');
 
-        // Show empty state if no ratings
+        // Always hide empty state and show container
+        container.classList.remove('hidden');
+        emptyState.classList.add('hidden');
+
+        // If no ratings yet, show initial popular bands
         if (rated.length === 0) {
-            container.classList.add('hidden');
-            emptyState.classList.remove('hidden');
-            this.currentRecommendations = [];
+            panelTitle.textContent = 'Popular Artists to Rate';
+            this.currentRecommendations = this.getInitialBands();
+            this.renderRecommendations();
             return;
         }
 
-        container.classList.remove('hidden');
-        emptyState.classList.add('hidden');
+        // Update title for personalized recommendations
+        panelTitle.textContent = 'Recommended For You';
 
         // Get user preferences based on ratings
         const preferences = this.getUserPreferences();
@@ -135,6 +140,44 @@ class MusicRecommender {
 
         // Render recommendations
         this.renderRecommendations();
+    }
+
+    // Get initial popular bands for first-time users
+    getInitialBands() {
+        // List of popular, culturally significant band IDs from our database
+        const popularBandIds = [
+            1,   // The Beatles
+            2,   // Led Zeppelin
+            3,   // Pink Floyd
+            11,  // The Rolling Stones
+            18,  // Jimi Hendrix
+            21,  // Queen
+            26,  // Black Sabbath
+            33,  // Metallica
+            8,   // Nirvana
+            7,   // Radiohead
+            13,  // The Clash
+            44,  // The Who
+            43,  // The Beach Boys
+            47,  // The Doors
+            31,  // The Ramones
+            65,  // R.E.M.
+            22,  // The Smiths
+            42,  // Pixies
+        ];
+
+        // Get these artists from the database, excluding any already rated or in to-listen list
+        const availableBands = popularBandIds
+            .map(id => this.artists.find(artist => artist.id === id))
+            .filter(artist =>
+                artist &&
+                !this.userRatings[artist.id] &&
+                !this.toListenList.some(item => item.id === artist.id)
+            );
+
+        // Shuffle and select a subset
+        const shuffled = [...availableBands].sort(() => Math.random() - 0.5);
+        return shuffled.slice(0, this.recommendationCount);
     }
 
     getUserPreferences() {
@@ -240,28 +283,81 @@ class MusicRecommender {
             artist => artist.id !== artistId
         );
 
-        // Get a new recommendation to replace it
-        const preferences = this.getUserPreferences();
-        const unratedArtists = this.artists.filter(artist =>
-            !this.userRatings[artist.id] &&
-            !this.toListenList.some(item => item.id === artist.id) &&
-            !this.currentRecommendations.some(rec => rec.id === artist.id)
-        );
+        const rated = Object.keys(this.userRatings);
 
-        if (unratedArtists.length > 0) {
-            const scoredArtists = unratedArtists.map(artist => ({
-                ...artist,
-                score: this.calculateArtistScore(artist, preferences)
-            }));
+        // If no ratings yet, get replacement from initial bands pool
+        if (rated.length === 0) {
+            const allInitialBands = this.getInitialBandsPool();
+            const availableBands = allInitialBands.filter(artist =>
+                !this.currentRecommendations.some(rec => rec.id === artist.id) &&
+                !this.toListenList.some(item => item.id === artist.id)
+            );
 
-            scoredArtists.sort((a, b) => b.score - a.score);
+            if (availableBands.length > 0) {
+                // Pick a random band from available pool
+                const randomIndex = Math.floor(Math.random() * availableBands.length);
+                this.currentRecommendations.push(availableBands[randomIndex]);
+            }
+        } else {
+            // Get a new recommendation based on preferences
+            const preferences = this.getUserPreferences();
+            const unratedArtists = this.artists.filter(artist =>
+                !this.userRatings[artist.id] &&
+                !this.toListenList.some(item => item.id === artist.id) &&
+                !this.currentRecommendations.some(rec => rec.id === artist.id)
+            );
 
-            // Add with some randomness
-            const index = Math.floor(Math.random() * Math.min(10, scoredArtists.length));
-            this.currentRecommendations.push(scoredArtists[index]);
+            if (unratedArtists.length > 0) {
+                const scoredArtists = unratedArtists.map(artist => ({
+                    ...artist,
+                    score: this.calculateArtistScore(artist, preferences)
+                }));
+
+                scoredArtists.sort((a, b) => b.score - a.score);
+
+                // Add with some randomness
+                const index = Math.floor(Math.random() * Math.min(10, scoredArtists.length));
+                this.currentRecommendations.push(scoredArtists[index]);
+            }
         }
 
         this.renderRecommendations();
+    }
+
+    // Get full pool of initial bands (not just the subset shown)
+    getInitialBandsPool() {
+        const popularBandIds = [
+            1,   // The Beatles
+            2,   // Led Zeppelin
+            3,   // Pink Floyd
+            11,  // The Rolling Stones
+            18,  // Jimi Hendrix
+            21,  // Queen
+            26,  // Black Sabbath
+            33,  // Metallica
+            8,   // Nirvana
+            7,   // Radiohead
+            13,  // The Clash
+            44,  // The Who
+            43,  // The Beach Boys
+            47,  // The Doors
+            31,  // The Ramones
+            65,  // R.E.M.
+            22,  // The Smiths
+            42,  // Pixies
+            79,  // The White Stripes
+            88,  // The Strokes
+            6,   // David Bowie
+            12,  // Michael Jackson
+            16,  // Prince
+            5,   // Bob Dylan
+            52,  // Neil Young
+            39,  // Bob Marley
+        ];
+
+        return popularBandIds
+            .map(id => this.artists.find(artist => artist.id === id))
+            .filter(artist => artist);
     }
 
     // To Listen List Methods
