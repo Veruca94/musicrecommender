@@ -1,0 +1,994 @@
+{
+  "artists": [
+    {
+      "id": 1,
+      "name": "The Beatles",
+      "genres": ["rock", "pop", "psychedelic"],
+      "themes": ["love", "peace", "experimental"],
+      "styles": ["british-invasion", "melodic", "harmony"],
+      "year": 1960,
+      "era": "1960s"
+    },
+    {
+      "id": 2,
+      "name": "Led Zeppelin",
+      "genres": ["rock", "hard-rock", "blues"],
+      "themes": ["mythology", "fantasy", "power"],
+      "styles": ["heavy", "blues-based", "epic"],
+      "year": 1968,
+      "era": "1960s"
+    },
+    {
+      "id": 3,
+      "name": "Pink Floyd",
+      "genres": ["progressive-rock", "psychedelic", "art-rock"],
+      "themes": ["philosophical", "surreal", "dystopian"],
+      "styles": ["atmospheric", "experimental", "conceptual"],
+      "year": 1965,
+      "era": "1960s"
+    },
+    {
+      "id": 4,
+      "name": "Miles Davis",
+      "genres": ["jazz", "fusion", "bebop"],
+      "themes": ["improvisation", "innovation", "sophisticated"],
+      "styles": ["modal", "cool-jazz", "experimental"],
+      "year": 1945,
+      "era": "1940s"
+    },
+    {
+      "id": 5,
+      "name": "Bob Dylan",
+      "genres": ["folk", "rock", "americana"],
+      "themes": ["political", "poetic", "protest"],
+      "styles": ["storytelling", "acoustic", "lyrical"],
+      "year": 1961,
+      "era": "1960s"
+    },
+    {
+      "id": 6,
+      "name": "David Bowie",
+      "genres": ["glam-rock", "art-rock", "pop"],
+      "themes": ["identity", "theatrical", "futuristic"],
+      "styles": ["avant-garde", "chameleon", "eclectic"],
+      "year": 1967,
+      "era": "1960s"
+    },
+    {
+      "id": 7,
+      "name": "Radiohead",
+      "genres": ["alternative-rock", "experimental", "electronic"],
+      "themes": ["alienation", "technology", "anxiety"],
+      "styles": ["atmospheric", "innovative", "melancholic"],
+      "year": 1985,
+      "era": "1980s"
+    },
+    {
+      "id": 8,
+      "name": "Nirvana",
+      "genres": ["grunge", "alternative-rock", "punk"],
+      "themes": ["angst", "rebellion", "raw"],
+      "styles": ["loud-quiet-loud", "distorted", "cathartic"],
+      "year": 1987,
+      "era": "1980s"
+    },
+    {
+      "id": 9,
+      "name": "The Velvet Underground",
+      "genres": ["art-rock", "experimental", "proto-punk"],
+      "themes": ["avant-garde", "urban", "taboo"],
+      "styles": ["minimalist", "droning", "provocative"],
+      "year": 1964,
+      "era": "1960s"
+    },
+    {
+      "id": 10,
+      "name": "Public Enemy",
+      "genres": ["hip-hop", "rap", "political-rap"],
+      "themes": ["social-justice", "militant", "consciousness"],
+      "styles": ["aggressive", "dense", "sample-heavy"],
+      "year": 1985,
+      "era": "1980s"
+    },
+    {
+      "id": 11,
+      "name": "The Rolling Stones",
+      "genres": ["rock", "blues-rock", "hard-rock"],
+      "themes": ["rebellion", "hedonism", "swagger"],
+      "styles": ["raw", "rhythmic", "bluesy"],
+      "year": 1962,
+      "era": "1960s"
+    },
+    {
+      "id": 12,
+      "name": "Michael Jackson",
+      "genres": ["pop", "r&b", "funk"],
+      "themes": ["dance", "love", "showmanship"],
+      "styles": ["polished", "rhythmic", "theatrical"],
+      "year": 1971,
+      "era": "1970s"
+    },
+    {
+      "id": 13,
+      "name": "The Clash",
+      "genres": ["punk", "rock", "reggae"],
+      "themes": ["political", "rebellion", "social"],
+      "styles": ["energetic", "eclectic", "aggressive"],
+      "year": 1976,
+      "era": "1970s"
+    },
+    {
+      "id": 14,
+      "name": "Kraftwerk",
+      "genres": ["electronic", "synth-pop", "experimental"],
+      "themes": ["technology", "robotic", "futuristic"],
+      "styles": ["minimalist", "repetitive", "pioneering"],
+      "year": 1970,
+      "era": "1970s"
+    },
+    {
+      "id": 15,
+      "name": "Aretha Franklin",
+      "genres": ["soul", "r&b", "gospel"],
+      "themes": ["empowerment", "love", "spiritual"],
+      "styles": ["powerful-vocals", "passionate", "soulful"],
+      "year": 1960,
+      "era": "1960s"
+    },
+    {
+      "id": 16,
+      "name": "Prince",
+      "genres": ["funk", "rock", "pop"],
+      "themes": ["sexuality", "spirituality", "eclectic"],
+      "styles": ["virtuosic", "flamboyant", "genre-blending"],
+      "year": 1978,
+      "era": "1970s"
+    },
+    {
+      "id": 17,
+      "name": "Johnny Cash",
+      "genres": ["country", "folk", "rockabilly"],
+      "themes": ["outlaws", "redemption", "americana"],
+      "styles": ["deep-voice", "storytelling", "sparse"],
+      "year": 1954,
+      "era": "1950s"
+    },
+    {
+      "id": 18,
+      "name": "Jimi Hendrix",
+      "genres": ["rock", "psychedelic", "blues"],
+      "themes": ["freedom", "cosmic", "experimental"],
+      "styles": ["guitar-virtuoso", "innovative", "explosive"],
+      "year": 1966,
+      "era": "1960s"
+    },
+    {
+      "id": 19,
+      "name": "Marvin Gaye",
+      "genres": ["soul", "r&b", "funk"],
+      "themes": ["love", "social-justice", "sensual"],
+      "styles": ["smooth", "passionate", "sophisticated"],
+      "year": 1961,
+      "era": "1960s"
+    },
+    {
+      "id": 20,
+      "name": "Joy Division",
+      "genres": ["post-punk", "new-wave", "gothic"],
+      "themes": ["darkness", "depression", "isolation"],
+      "styles": ["atmospheric", "stark", "brooding"],
+      "year": 1976,
+      "era": "1970s"
+    },
+    {
+      "id": 21,
+      "name": "Queen",
+      "genres": ["rock", "opera-rock", "glam"],
+      "themes": ["theatrical", "epic", "triumphant"],
+      "styles": ["harmonies", "bombastic", "diverse"],
+      "year": 1970,
+      "era": "1970s"
+    },
+    {
+      "id": 22,
+      "name": "The Smiths",
+      "genres": ["indie-rock", "jangle-pop", "alternative"],
+      "themes": ["melancholy", "witty", "alienation"],
+      "styles": ["jangly-guitars", "literary", "melodic"],
+      "year": 1982,
+      "era": "1980s"
+    },
+    {
+      "id": 23,
+      "name": "Wu-Tang Clan",
+      "genres": ["hip-hop", "rap", "east-coast"],
+      "themes": ["martial-arts", "street", "wisdom"],
+      "styles": ["raw", "complex", "gritty"],
+      "year": 1992,
+      "era": "1990s"
+    },
+    {
+      "id": 24,
+      "name": "Björk",
+      "genres": ["art-pop", "electronic", "experimental"],
+      "themes": ["nature", "emotion", "avant-garde"],
+      "styles": ["eclectic", "innovative", "unique-vocals"],
+      "year": 1977,
+      "era": "1970s"
+    },
+    {
+      "id": 25,
+      "name": "Stevie Wonder",
+      "genres": ["soul", "funk", "r&b"],
+      "themes": ["love", "social", "uplifting"],
+      "styles": ["virtuosic", "melodic", "innovative"],
+      "year": 1961,
+      "era": "1960s"
+    },
+    {
+      "id": 26,
+      "name": "Black Sabbath",
+      "genres": ["heavy-metal", "doom", "hard-rock"],
+      "themes": ["dark", "occult", "heavy"],
+      "styles": ["riff-heavy", "ominous", "powerful"],
+      "year": 1968,
+      "era": "1960s"
+    },
+    {
+      "id": 27,
+      "name": "The Cure",
+      "genres": ["post-punk", "gothic-rock", "new-wave"],
+      "themes": ["melancholy", "romance", "atmospheric"],
+      "styles": ["moody", "textured", "emotional"],
+      "year": 1976,
+      "era": "1970s"
+    },
+    {
+      "id": 28,
+      "name": "Talking Heads",
+      "genres": ["new-wave", "art-rock", "funk"],
+      "themes": ["quirky", "intellectual", "rhythmic"],
+      "styles": ["funky", "angular", "cerebral"],
+      "year": 1975,
+      "era": "1970s"
+    },
+    {
+      "id": 29,
+      "name": "A Tribe Called Quest",
+      "genres": ["hip-hop", "jazz-rap", "alternative-rap"],
+      "themes": ["consciousness", "afrocentric", "positive"],
+      "styles": ["jazzy", "smooth", "intelligent"],
+      "year": 1985,
+      "era": "1980s"
+    },
+    {
+      "id": 30,
+      "name": "Massive Attack",
+      "genres": ["trip-hop", "electronic", "downtempo"],
+      "themes": ["urban", "cinematic", "dark"],
+      "styles": ["atmospheric", "bass-heavy", "haunting"],
+      "year": 1988,
+      "era": "1980s"
+    },
+    {
+      "id": 31,
+      "name": "The Ramones",
+      "genres": ["punk", "rock", "proto-punk"],
+      "themes": ["simplicity", "rebellion", "fun"],
+      "styles": ["fast", "short-songs", "raw"],
+      "year": 1974,
+      "era": "1970s"
+    },
+    {
+      "id": 32,
+      "name": "Joni Mitchell",
+      "genres": ["folk", "jazz", "singer-songwriter"],
+      "themes": ["introspective", "poetic", "personal"],
+      "styles": ["complex-harmonies", "confessional", "artistic"],
+      "year": 1964,
+      "era": "1960s"
+    },
+    {
+      "id": 33,
+      "name": "Metallica",
+      "genres": ["thrash-metal", "heavy-metal", "hard-rock"],
+      "themes": ["aggression", "social", "epic"],
+      "styles": ["fast", "technical", "heavy"],
+      "year": 1981,
+      "era": "1980s"
+    },
+    {
+      "id": 34,
+      "name": "Daft Punk",
+      "genres": ["electronic", "house", "dance"],
+      "themes": ["futuristic", "robotic", "nostalgia"],
+      "styles": ["funky", "filtered", "polished"],
+      "year": 1993,
+      "era": "1990s"
+    },
+    {
+      "id": 35,
+      "name": "Sly and the Family Stone",
+      "genres": ["funk", "soul", "rock"],
+      "themes": ["unity", "psychedelic", "social"],
+      "styles": ["groovy", "integrated", "innovative"],
+      "year": 1966,
+      "era": "1960s"
+    },
+    {
+      "id": 36,
+      "name": "My Bloody Valentine",
+      "genres": ["shoegaze", "noise-rock", "dream-pop"],
+      "themes": ["ethereal", "sonic", "textural"],
+      "styles": ["wall-of-sound", "distorted", "dreamy"],
+      "year": 1983,
+      "era": "1980s"
+    },
+    {
+      "id": 37,
+      "name": "The Stooges",
+      "genres": ["proto-punk", "rock", "garage"],
+      "themes": ["raw", "primal", "rebellious"],
+      "styles": ["aggressive", "minimalist", "energetic"],
+      "year": 1967,
+      "era": "1960s"
+    },
+    {
+      "id": 38,
+      "name": "Sonic Youth",
+      "genres": ["noise-rock", "alternative", "experimental"],
+      "themes": ["avant-garde", "dissonant", "artistic"],
+      "styles": ["atonal", "feedback", "unconventional"],
+      "year": 1981,
+      "era": "1980s"
+    },
+    {
+      "id": 39,
+      "name": "Bob Marley",
+      "genres": ["reggae", "ska", "roots"],
+      "themes": ["peace", "love", "rastafarian"],
+      "styles": ["rhythmic", "spiritual", "melodic"],
+      "year": 1963,
+      "era": "1960s"
+    },
+    {
+      "id": 40,
+      "name": "Portishead",
+      "genres": ["trip-hop", "downtempo", "electronic"],
+      "themes": ["noir", "melancholic", "cinematic"],
+      "styles": ["dark", "atmospheric", "vintage"],
+      "year": 1991,
+      "era": "1990s"
+    },
+    {
+      "id": 41,
+      "name": "Run-DMC",
+      "genres": ["hip-hop", "rap", "old-school"],
+      "themes": ["street", "party", "confident"],
+      "styles": ["hard-hitting", "stripped-down", "energetic"],
+      "year": 1981,
+      "era": "1980s"
+    },
+    {
+      "id": 42,
+      "name": "Pixies",
+      "genres": ["alternative-rock", "indie", "punk"],
+      "themes": ["surreal", "dynamics", "quirky"],
+      "styles": ["loud-quiet", "angular", "influential"],
+      "year": 1986,
+      "era": "1980s"
+    },
+    {
+      "id": 43,
+      "name": "The Beach Boys",
+      "genres": ["pop", "rock", "surf"],
+      "themes": ["california", "youth", "nostalgia"],
+      "styles": ["harmonies", "melodic", "innovative"],
+      "year": 1961,
+      "era": "1960s"
+    },
+    {
+      "id": 44,
+      "name": "The Who",
+      "genres": ["rock", "hard-rock", "mod"],
+      "themes": ["rebellion", "youth", "conceptual"],
+      "styles": ["powerful", "operatic", "energetic"],
+      "year": 1964,
+      "era": "1960s"
+    },
+    {
+      "id": 45,
+      "name": "Depeche Mode",
+      "genres": ["synth-pop", "electronic", "new-wave"],
+      "themes": ["dark", "romantic", "introspective"],
+      "styles": ["synthetic", "moody", "melodic"],
+      "year": 1980,
+      "era": "1980s"
+    },
+    {
+      "id": 46,
+      "name": "Kanye West",
+      "genres": ["hip-hop", "rap", "experimental"],
+      "themes": ["ego", "production", "innovative"],
+      "styles": ["sample-based", "maximalist", "diverse"],
+      "year": 1996,
+      "era": "1990s"
+    },
+    {
+      "id": 47,
+      "name": "The Doors",
+      "genres": ["psychedelic-rock", "rock", "blues"],
+      "themes": ["poetic", "dark", "mystical"],
+      "styles": ["organ-based", "theatrical", "improvisational"],
+      "year": 1965,
+      "era": "1960s"
+    },
+    {
+      "id": 48,
+      "name": "Pavement",
+      "genres": ["indie-rock", "lo-fi", "alternative"],
+      "themes": ["slacker", "ironic", "abstract"],
+      "styles": ["loose", "melodic", "quirky"],
+      "year": 1989,
+      "era": "1980s"
+    },
+    {
+      "id": 49,
+      "name": "Fela Kuti",
+      "genres": ["afrobeat", "funk", "jazz"],
+      "themes": ["political", "african", "revolutionary"],
+      "styles": ["polyrhythmic", "extended-jams", "hypnotic"],
+      "year": 1958,
+      "era": "1950s"
+    },
+    {
+      "id": 50,
+      "name": "The Notorious B.I.G.",
+      "genres": ["hip-hop", "rap", "east-coast"],
+      "themes": ["street", "storytelling", "lifestyle"],
+      "styles": ["smooth", "narrative", "charismatic"],
+      "year": 1992,
+      "era": "1990s"
+    },
+    {
+      "id": 51,
+      "name": "Aphex Twin",
+      "genres": ["electronic", "idm", "ambient"],
+      "themes": ["experimental", "complex", "cerebral"],
+      "styles": ["intricate", "glitchy", "innovative"],
+      "year": 1985,
+      "era": "1980s"
+    },
+    {
+      "id": 52,
+      "name": "Neil Young",
+      "genres": ["rock", "folk", "country"],
+      "themes": ["introspective", "raw", "honest"],
+      "styles": ["guitar-driven", "emotional", "varied"],
+      "year": 1960,
+      "era": "1960s"
+    },
+    {
+      "id": 53,
+      "name": "Patti Smith",
+      "genres": ["punk", "rock", "poetry"],
+      "themes": ["poetic", "rebellious", "spiritual"],
+      "styles": ["raw", "literary", "passionate"],
+      "year": 1974,
+      "era": "1970s"
+    },
+    {
+      "id": 54,
+      "name": "N.W.A",
+      "genres": ["hip-hop", "gangsta-rap", "west-coast"],
+      "themes": ["political", "street", "confrontational"],
+      "styles": ["aggressive", "raw", "provocative"],
+      "year": 1986,
+      "era": "1980s"
+    },
+    {
+      "id": 55,
+      "name": "Beastie Boys",
+      "genres": ["hip-hop", "rap", "alternative"],
+      "themes": ["party", "eclectic", "humor"],
+      "styles": ["sample-heavy", "energetic", "diverse"],
+      "year": 1981,
+      "era": "1980s"
+    },
+    {
+      "id": 56,
+      "name": "The Kinks",
+      "genres": ["rock", "british-invasion", "pop"],
+      "themes": ["british-life", "satire", "observational"],
+      "styles": ["melodic", "theatrical", "witty"],
+      "year": 1963,
+      "era": "1960s"
+    },
+    {
+      "id": 57,
+      "name": "Simon and Garfunkel",
+      "genres": ["folk", "pop", "soft-rock"],
+      "themes": ["introspective", "poetic", "harmony"],
+      "styles": ["acoustic", "vocal-harmony", "melodic"],
+      "year": 1957,
+      "era": "1950s"
+    },
+    {
+      "id": 58,
+      "name": "Kendrick Lamar",
+      "genres": ["hip-hop", "rap", "conscious"],
+      "themes": ["social-justice", "introspective", "narrative"],
+      "styles": ["lyrical", "conceptual", "complex"],
+      "year": 2003,
+      "era": "2000s"
+    },
+    {
+      "id": 59,
+      "name": "Fleetwood Mac",
+      "genres": ["rock", "pop", "soft-rock"],
+      "themes": ["relationships", "emotion", "melodic"],
+      "styles": ["harmonies", "polished", "intimate"],
+      "year": 1967,
+      "era": "1960s"
+    },
+    {
+      "id": 60,
+      "name": "New Order",
+      "genres": ["new-wave", "electronic", "dance"],
+      "themes": ["melancholic", "rhythmic", "danceable"],
+      "styles": ["synth-driven", "melodic", "innovative"],
+      "year": 1980,
+      "era": "1980s"
+    },
+    {
+      "id": 61,
+      "name": "James Brown",
+      "genres": ["funk", "soul", "r&b"],
+      "themes": ["dance", "empowerment", "energy"],
+      "styles": ["rhythmic", "tight", "influential"],
+      "year": 1956,
+      "era": "1950s"
+    },
+    {
+      "id": 62,
+      "name": "Otis Redding",
+      "genres": ["soul", "r&b", "blues"],
+      "themes": ["love", "passionate", "emotional"],
+      "styles": ["powerful-vocals", "raw", "heartfelt"],
+      "year": 1960,
+      "era": "1960s"
+    },
+    {
+      "id": 63,
+      "name": "The National",
+      "genres": ["indie-rock", "alternative", "post-punk"],
+      "themes": ["melancholic", "literary", "introspective"],
+      "styles": ["brooding", "baritone", "layered"],
+      "year": 1999,
+      "era": "1990s"
+    },
+    {
+      "id": 64,
+      "name": "OutKast",
+      "genres": ["hip-hop", "southern-rap", "funk"],
+      "themes": ["eclectic", "southern", "innovative"],
+      "styles": ["funky", "experimental", "diverse"],
+      "year": 1992,
+      "era": "1990s"
+    },
+    {
+      "id": 65,
+      "name": "R.E.M.",
+      "genres": ["alternative-rock", "indie", "jangle-pop"],
+      "themes": ["poetic", "political", "melodic"],
+      "styles": ["jangly", "atmospheric", "earnest"],
+      "year": 1980,
+      "era": "1980s"
+    },
+    {
+      "id": 66,
+      "name": "Elvis Presley",
+      "genres": ["rock-and-roll", "pop", "rockabilly"],
+      "themes": ["love", "rebellion", "charisma"],
+      "styles": ["energetic", "charismatic", "influential"],
+      "year": 1953,
+      "era": "1950s"
+    },
+    {
+      "id": 67,
+      "name": "The Smiths",
+      "genres": ["indie-rock", "alternative", "jangle-pop"],
+      "themes": ["melancholy", "witty", "romantic"],
+      "styles": ["jangly-guitars", "poetic", "melodic"],
+      "year": 1982,
+      "era": "1980s"
+    },
+    {
+      "id": 68,
+      "name": "Nas",
+      "genres": ["hip-hop", "rap", "east-coast"],
+      "themes": ["street", "lyrical", "storytelling"],
+      "styles": ["poetic", "narrative", "jazzy"],
+      "year": 1991,
+      "era": "1990s"
+    },
+    {
+      "id": 69,
+      "name": "Steely Dan",
+      "genres": ["rock", "jazz-fusion", "pop"],
+      "themes": ["cynical", "sophisticated", "jazzy"],
+      "styles": ["polished", "complex", "studio-craft"],
+      "year": 1972,
+      "era": "1970s"
+    },
+    {
+      "id": 70,
+      "name": "Tupac Shakur",
+      "genres": ["hip-hop", "rap", "west-coast"],
+      "themes": ["social", "emotional", "political"],
+      "styles": ["passionate", "poetic", "raw"],
+      "year": 1987,
+      "era": "1980s"
+    },
+    {
+      "id": 71,
+      "name": "Television",
+      "genres": ["punk", "art-rock", "proto-punk"],
+      "themes": ["cerebral", "poetic", "minimalist"],
+      "styles": ["guitar-interplay", "angular", "innovative"],
+      "year": 1973,
+      "era": "1970s"
+    },
+    {
+      "id": 72,
+      "name": "Lauryn Hill",
+      "genres": ["hip-hop", "r&b", "soul"],
+      "themes": ["empowerment", "love", "spiritual"],
+      "styles": ["soulful", "lyrical", "melodic"],
+      "year": 1988,
+      "era": "1980s"
+    },
+    {
+      "id": 73,
+      "name": "The Police",
+      "genres": ["rock", "new-wave", "reggae"],
+      "themes": ["eclectic", "rhythmic", "melodic"],
+      "styles": ["tight", "reggae-influenced", "polished"],
+      "year": 1977,
+      "era": "1970s"
+    },
+    {
+      "id": 74,
+      "name": "Wilco",
+      "genres": ["alternative-country", "indie-rock", "americana"],
+      "themes": ["experimental", "introspective", "evolving"],
+      "styles": ["layered", "diverse", "artistic"],
+      "year": 1994,
+      "era": "1990s"
+    },
+    {
+      "id": 75,
+      "name": "Blur",
+      "genres": ["britpop", "alternative-rock", "indie"],
+      "themes": ["british-life", "satire", "melodic"],
+      "styles": ["catchy", "diverse", "art-pop"],
+      "year": 1988,
+      "era": "1980s"
+    },
+    {
+      "id": 76,
+      "name": "Herbie Hancock",
+      "genres": ["jazz", "fusion", "funk"],
+      "themes": ["innovation", "groove", "experimental"],
+      "styles": ["keyboard-driven", "funky", "progressive"],
+      "year": 1960,
+      "era": "1960s"
+    },
+    {
+      "id": 77,
+      "name": "Smashing Pumpkins",
+      "genres": ["alternative-rock", "grunge", "shoegaze"],
+      "themes": ["melancholic", "epic", "introspective"],
+      "styles": ["layered-guitars", "dynamic", "ambitious"],
+      "year": 1988,
+      "era": "1980s"
+    },
+    {
+      "id": 78,
+      "name": "Tom Waits",
+      "genres": ["experimental", "jazz", "blues"],
+      "themes": ["dark", "theatrical", "literary"],
+      "styles": ["gravelly-voice", "avant-garde", "eccentric"],
+      "year": 1971,
+      "era": "1970s"
+    },
+    {
+      "id": 79,
+      "name": "The White Stripes",
+      "genres": ["garage-rock", "blues-rock", "alternative"],
+      "themes": ["minimalist", "raw", "blues"],
+      "styles": ["stripped-down", "powerful", "retro"],
+      "year": 1997,
+      "era": "1990s"
+    },
+    {
+      "id": 80,
+      "name": "Sade",
+      "genres": ["soul", "jazz", "pop"],
+      "themes": ["smooth", "romantic", "sophisticated"],
+      "styles": ["elegant", "sultry", "polished"],
+      "year": 1982,
+      "era": "1980s"
+    },
+    {
+      "id": 81,
+      "name": "Oasis",
+      "genres": ["britpop", "rock", "alternative"],
+      "themes": ["anthemic", "working-class", "confident"],
+      "styles": ["melodic", "loud", "hooky"],
+      "year": 1991,
+      "era": "1990s"
+    },
+    {
+      "id": 82,
+      "name": "Slayer",
+      "genres": ["thrash-metal", "heavy-metal", "speed-metal"],
+      "themes": ["dark", "aggressive", "intense"],
+      "styles": ["fast", "brutal", "technical"],
+      "year": 1981,
+      "era": "1980s"
+    },
+    {
+      "id": 83,
+      "name": "D'Angelo",
+      "genres": ["neo-soul", "r&b", "funk"],
+      "themes": ["sensual", "spiritual", "organic"],
+      "styles": ["groovy", "vintage", "soulful"],
+      "year": 1991,
+      "era": "1990s"
+    },
+    {
+      "id": 84,
+      "name": "Cocteau Twins",
+      "genres": ["dream-pop", "ethereal", "shoegaze"],
+      "themes": ["atmospheric", "ethereal", "emotional"],
+      "styles": ["lush", "reverb-heavy", "vocal-texture"],
+      "year": 1979,
+      "era": "1970s"
+    },
+    {
+      "id": 85,
+      "name": "Rage Against the Machine",
+      "genres": ["rap-metal", "alternative-metal", "funk-metal"],
+      "themes": ["political", "revolutionary", "anger"],
+      "styles": ["aggressive", "funky", "heavy"],
+      "year": 1991,
+      "era": "1990s"
+    },
+    {
+      "id": 86,
+      "name": "Mariah Carey",
+      "genres": ["pop", "r&b", "soul"],
+      "themes": ["love", "empowerment", "vocal"],
+      "styles": ["melismatic", "powerful-vocals", "melodic"],
+      "year": 1988,
+      "era": "1980s"
+    },
+    {
+      "id": 87,
+      "name": "Van Morrison",
+      "genres": ["rock", "soul", "celtic"],
+      "themes": ["spiritual", "romantic", "mystical"],
+      "styles": ["soulful", "improvisational", "eclectic"],
+      "year": 1958,
+      "era": "1950s"
+    },
+    {
+      "id": 88,
+      "name": "The Strokes",
+      "genres": ["indie-rock", "garage-rock", "post-punk"],
+      "themes": ["urban", "youthful", "cool"],
+      "styles": ["raw", "catchy", "retro"],
+      "year": 1998,
+      "era": "1990s"
+    },
+    {
+      "id": 89,
+      "name": "Sufjan Stevens",
+      "genres": ["indie-folk", "chamber-pop", "experimental"],
+      "themes": ["intimate", "orchestral", "spiritual"],
+      "styles": ["delicate", "intricate", "emotional"],
+      "year": 1995,
+      "era": "1990s"
+    },
+    {
+      "id": 90,
+      "name": "Erykah Badu",
+      "genres": ["neo-soul", "r&b", "hip-hop"],
+      "themes": ["spiritual", "conscious", "sensual"],
+      "styles": ["jazzy", "unique-voice", "groovy"],
+      "year": 1994,
+      "era": "1990s"
+    },
+    {
+      "id": 91,
+      "name": "Nick Cave and the Bad Seeds",
+      "genres": ["post-punk", "gothic-rock", "alternative"],
+      "themes": ["dark", "literary", "dramatic"],
+      "styles": ["theatrical", "brooding", "narrative"],
+      "year": 1983,
+      "era": "1980s"
+    },
+    {
+      "id": 92,
+      "name": "Jay-Z",
+      "genres": ["hip-hop", "rap", "east-coast"],
+      "themes": ["business", "storytelling", "confidence"],
+      "styles": ["smooth", "clever", "polished"],
+      "year": 1986,
+      "era": "1980s"
+    },
+    {
+      "id": 93,
+      "name": "Buena Vista Social Club",
+      "genres": ["cuban", "son", "latin"],
+      "themes": ["nostalgic", "traditional", "joyful"],
+      "styles": ["acoustic", "rhythmic", "vintage"],
+      "year": 1996,
+      "era": "1990s"
+    },
+    {
+      "id": 94,
+      "name": "The xx",
+      "genres": ["indie-pop", "electronic", "minimal"],
+      "themes": ["intimate", "sparse", "nocturnal"],
+      "styles": ["minimalist", "atmospheric", "subtle"],
+      "year": 2005,
+      "era": "2000s"
+    },
+    {
+      "id": 95,
+      "name": "Parliament-Funkadelic",
+      "genres": ["funk", "psychedelic", "soul"],
+      "themes": ["cosmic", "party", "afrofuturism"],
+      "styles": ["groovy", "psychedelic", "theatrical"],
+      "year": 1968,
+      "era": "1960s"
+    },
+    {
+      "id": 96,
+      "name": "Roxy Music",
+      "genres": ["glam-rock", "art-rock", "new-wave"],
+      "themes": ["glamorous", "sophisticated", "eclectic"],
+      "styles": ["stylish", "experimental", "romantic"],
+      "year": 1970,
+      "era": "1970s"
+    },
+    {
+      "id": 97,
+      "name": "Frank Ocean",
+      "genres": ["r&b", "alternative-r&b", "hip-hop"],
+      "themes": ["introspective", "emotional", "innovative"],
+      "styles": ["atmospheric", "experimental", "intimate"],
+      "year": 2005,
+      "era": "2000s"
+    },
+    {
+      "id": 98,
+      "name": "Bauhaus",
+      "genres": ["gothic-rock", "post-punk", "dark-wave"],
+      "themes": ["dark", "theatrical", "gothic"],
+      "styles": ["stark", "dramatic", "atmospheric"],
+      "year": 1978,
+      "era": "1970s"
+    },
+    {
+      "id": 99,
+      "name": "Tame Impala",
+      "genres": ["psychedelic-rock", "indie", "electronic"],
+      "themes": ["psychedelic", "introspective", "dreamy"],
+      "styles": ["layered", "synth-heavy", "trippy"],
+      "year": 2007,
+      "era": "2000s"
+    },
+    {
+      "id": 100,
+      "name": "The Breeders",
+      "genres": ["alternative-rock", "indie", "punk"],
+      "themes": ["quirky", "melodic", "offbeat"],
+      "styles": ["catchy", "loose", "playful"],
+      "year": 1989,
+      "era": "1980s"
+    },
+    {
+      "id": 101,
+      "name": "Amy Winehouse",
+      "genres": ["soul", "jazz", "r&b"],
+      "themes": ["heartbreak", "retro", "raw"],
+      "styles": ["powerful-vocals", "vintage", "emotional"],
+      "year": 2003,
+      "era": "2000s"
+    },
+    {
+      "id": 102,
+      "name": "Dinosaur Jr.",
+      "genres": ["alternative-rock", "indie", "noise-rock"],
+      "themes": ["slacker", "melodic", "loud"],
+      "styles": ["guitar-heavy", "feedback", "melodic"],
+      "year": 1984,
+      "era": "1980s"
+    },
+    {
+      "id": 103,
+      "name": "Funkadelic",
+      "genres": ["funk", "psychedelic", "rock"],
+      "themes": ["cosmic", "freedom", "wild"],
+      "styles": ["experimental", "groovy", "loud"],
+      "year": 1968,
+      "era": "1960s"
+    },
+    {
+      "id": 104,
+      "name": "The Meters",
+      "genres": ["funk", "soul", "r&b"],
+      "themes": ["instrumental", "groove", "tight"],
+      "styles": ["funky", "syncopated", "minimal"],
+      "year": 1965,
+      "era": "1960s"
+    },
+    {
+      "id": 105,
+      "name": "Sleater-Kinney",
+      "genres": ["indie-rock", "riot-grrrl", "punk"],
+      "themes": ["feminist", "political", "energetic"],
+      "styles": ["dual-guitar", "powerful", "angular"],
+      "year": 1994,
+      "era": "1990s"
+    },
+    {
+      "id": 106,
+      "name": "Air",
+      "genres": ["electronic", "downtempo", "dream-pop"],
+      "themes": ["dreamy", "cinematic", "romantic"],
+      "styles": ["lush", "vintage-synths", "elegant"],
+      "year": 1995,
+      "era": "1990s"
+    },
+    {
+      "id": 107,
+      "name": "Arcade Fire",
+      "genres": ["indie-rock", "art-rock", "baroque-pop"],
+      "themes": ["anthemic", "orchestral", "emotional"],
+      "styles": ["grand", "urgent", "theatrical"],
+      "year": 2001,
+      "era": "2000s"
+    },
+    {
+      "id": 108,
+      "name": "Earth, Wind & Fire",
+      "genres": ["funk", "soul", "disco"],
+      "themes": ["uplifting", "spiritual", "joyful"],
+      "styles": ["horn-section", "groovy", "polished"],
+      "year": 1969,
+      "era": "1960s"
+    },
+    {
+      "id": 109,
+      "name": "Fugazi",
+      "genres": ["post-hardcore", "punk", "indie"],
+      "themes": ["political", "diy", "intense"],
+      "styles": ["angular", "dynamic", "principled"],
+      "year": 1987,
+      "era": "1980s"
+    },
+    {
+      "id": 110,
+      "name": "Moby",
+      "genres": ["electronic", "ambient", "techno"],
+      "themes": ["emotional", "spiritual", "cinematic"],
+      "styles": ["sample-based", "atmospheric", "melodic"],
+      "year": 1989,
+      "era": "1980s"
+    }
+  ]
+}
