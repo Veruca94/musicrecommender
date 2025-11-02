@@ -5,6 +5,7 @@ class MusicRecommender {
         this.userRatings = {};
         this.toListenList = [];
         this.currentRecommendations = [];
+        this.recentlyShown = []; // Track recently shown artists for shuffle
         this.recommendationCount = 6;
 
         this.init();
@@ -144,40 +145,36 @@ class MusicRecommender {
 
     // Get initial popular bands for first-time users
     getInitialBands() {
-        // List of popular, culturally significant band IDs from our database
-        const popularBandIds = [
-            1,   // The Beatles
-            2,   // Led Zeppelin
-            3,   // Pink Floyd
-            11,  // The Rolling Stones
-            18,  // Jimi Hendrix
-            21,  // Queen
-            26,  // Black Sabbath
-            33,  // Metallica
-            8,   // Nirvana
-            7,   // Radiohead
-            13,  // The Clash
-            44,  // The Who
-            43,  // The Beach Boys
-            47,  // The Doors
-            31,  // The Ramones
-            65,  // R.E.M.
-            22,  // The Smiths
-            42,  // Pixies
-        ];
+        const allInitialBands = this.getInitialBandsPool();
 
-        // Get these artists from the database, excluding any already rated or in to-listen list
-        const availableBands = popularBandIds
-            .map(id => this.artists.find(artist => artist.id === id))
-            .filter(artist =>
-                artist &&
-                !this.userRatings[artist.id] &&
-                !this.toListenList.some(item => item.id === artist.id)
-            );
+        // Filter out rated, to-listen, and recently shown
+        const availableBands = allInitialBands.filter(artist =>
+            !this.userRatings[artist.id] &&
+            !this.toListenList.some(item => item.id === artist.id) &&
+            !this.recentlyShown.includes(artist.id)
+        );
+
+        // If we've exhausted the pool, reset recently shown
+        if (availableBands.length < this.recommendationCount) {
+            this.recentlyShown = [];
+            return this.getInitialBands(); // Recursive call with cleared history
+        }
 
         // Shuffle and select a subset
         const shuffled = [...availableBands].sort(() => Math.random() - 0.5);
-        return shuffled.slice(0, this.recommendationCount);
+        const selected = shuffled.slice(0, this.recommendationCount);
+
+        // Track these as recently shown
+        selected.forEach(artist => {
+            this.recentlyShown.push(artist.id);
+        });
+
+        // Keep recently shown list manageable (last 18 artists)
+        if (this.recentlyShown.length > 18) {
+            this.recentlyShown = this.recentlyShown.slice(-18);
+        }
+
+        return selected;
     }
 
     getUserPreferences() {
@@ -256,18 +253,38 @@ class MusicRecommender {
         const recommendations = [];
         const count = Math.min(this.recommendationCount, scoredArtists.length);
 
+        // Filter out recently shown artists for fresh recommendations
+        const freshArtists = scoredArtists.filter(artist =>
+            !this.recentlyShown.includes(artist.id)
+        );
+
+        // If we don't have enough fresh artists, use all scored artists
+        const availableArtists = freshArtists.length >= count ? freshArtists : scoredArtists;
+
         // Take top 70% from highest scores, and 30% from random selection for diversity
         const topCount = Math.ceil(count * 0.7);
         const randomCount = count - topCount;
 
         // Add top scored artists
-        recommendations.push(...scoredArtists.slice(0, topCount));
+        recommendations.push(...availableArtists.slice(0, topCount));
 
         // Add random artists from the rest
-        const remaining = scoredArtists.slice(topCount);
+        const remaining = availableArtists.slice(topCount);
         for (let i = 0; i < randomCount && remaining.length > 0; i++) {
             const randomIndex = Math.floor(Math.random() * remaining.length);
             recommendations.push(remaining.splice(randomIndex, 1)[0]);
+        }
+
+        // Track these as recently shown
+        recommendations.forEach(artist => {
+            if (!this.recentlyShown.includes(artist.id)) {
+                this.recentlyShown.push(artist.id);
+            }
+        });
+
+        // Keep recently shown list manageable (last 24 artists)
+        if (this.recentlyShown.length > 24) {
+            this.recentlyShown = this.recentlyShown.slice(-24);
         }
 
         return recommendations;
@@ -327,32 +344,77 @@ class MusicRecommender {
     // Get full pool of initial bands (not just the subset shown)
     getInitialBandsPool() {
         const popularBandIds = [
+            // Classic Rock
             1,   // The Beatles
             2,   // Led Zeppelin
             3,   // Pink Floyd
             11,  // The Rolling Stones
             18,  // Jimi Hendrix
             21,  // Queen
-            26,  // Black Sabbath
-            33,  // Metallica
-            8,   // Nirvana
-            7,   // Radiohead
-            13,  // The Clash
             44,  // The Who
             43,  // The Beach Boys
             47,  // The Doors
+            9,   // The Velvet Underground
+            56,  // The Kinks
+
+            // Hard Rock & Metal
+            26,  // Black Sabbath
+            33,  // Metallica
+            82,  // Slayer
+
+            // Punk & Post-Punk
+            13,  // The Clash
             31,  // The Ramones
-            65,  // R.E.M.
+            20,  // Joy Division
+            27,  // The Cure
+            71,  // Television
+            98,  // Bauhaus
+
+            // Alternative & Indie
+            8,   // Nirvana
+            7,   // Radiohead
             22,  // The Smiths
             42,  // Pixies
+            65,  // R.E.M.
             79,  // The White Stripes
             88,  // The Strokes
+            38,  // Sonic Youth
+            48,  // Pavement
+            77,  // Smashing Pumpkins
+            107, // Arcade Fire
+
+            // Influential Solo Artists
             6,   // David Bowie
-            12,  // Michael Jackson
-            16,  // Prince
             5,   // Bob Dylan
             52,  // Neil Young
+            53,  // Patti Smith
+            78,  // Tom Waits
+
+            // Pop & R&B Icons
+            12,  // Michael Jackson
+            16,  // Prince
+            25,  // Stevie Wonder
+            15,  // Aretha Franklin
+            19,  // Marvin Gaye
+
+            // Reggae & World
             39,  // Bob Marley
+            49,  // Fela Kuti
+            93,  // Buena Vista Social Club
+
+            // Hip-Hop
+            10,  // Public Enemy
+            23,  // Wu-Tang Clan
+            54,  // N.W.A
+            50,  // The Notorious B.I.G.
+            70,  // Tupac Shakur
+
+            // Electronic & Experimental
+            14,  // Kraftwerk
+            34,  // Daft Punk
+            28,  // Talking Heads
+            60,  // New Order
+            45,  // Depeche Mode
         ];
 
         return popularBandIds
@@ -423,13 +485,34 @@ class MusicRecommender {
 
             // Setup rating stars
             const ratingStars = card.querySelector('.rating-stars');
-            ratingStars.querySelectorAll('.star-btn').forEach(star => {
+            const starButtons = ratingStars.querySelectorAll('.star-btn');
+
+            starButtons.forEach(star => {
+                // Click handler
                 star.addEventListener('click', (e) => {
                     const rating = parseInt(e.target.dataset.rating);
                     this.rateArtist(artist.id, rating);
                     this.removeRecommendation(artist.id);
                     this.generateRecommendations();
                 });
+
+                // Hover effect - light up all stars up to hovered one
+                star.addEventListener('mouseenter', (e) => {
+                    const rating = parseInt(e.target.dataset.rating);
+                    starButtons.forEach(s => {
+                        const starRating = parseInt(s.dataset.rating);
+                        if (starRating <= rating) {
+                            s.classList.add('hover');
+                        } else {
+                            s.classList.remove('hover');
+                        }
+                    });
+                });
+            });
+
+            // Remove hover effect when leaving the entire star container
+            ratingStars.addEventListener('mouseleave', () => {
+                starButtons.forEach(s => s.classList.remove('hover'));
             });
 
             // Setup trash button
@@ -534,13 +617,15 @@ class MusicRecommender {
         let selectedRating = 0;
 
         // Rating input for add artist form
-        ratingInput.querySelectorAll('.star-btn').forEach(star => {
+        const starButtons = ratingInput.querySelectorAll('.star-btn');
+
+        starButtons.forEach(star => {
             star.addEventListener('click', (e) => {
                 e.preventDefault();
                 selectedRating = parseInt(e.target.dataset.rating);
 
                 // Update visual state
-                ratingInput.querySelectorAll('.star-btn').forEach(s => {
+                starButtons.forEach(s => {
                     if (parseInt(s.dataset.rating) <= selectedRating) {
                         s.classList.add('active');
                     } else {
@@ -551,23 +636,19 @@ class MusicRecommender {
 
             star.addEventListener('mouseenter', (e) => {
                 const rating = parseInt(e.target.dataset.rating);
-                ratingInput.querySelectorAll('.star-btn').forEach(s => {
+                starButtons.forEach(s => {
                     if (parseInt(s.dataset.rating) <= rating) {
-                        s.style.color = 'var(--warning)';
+                        s.classList.add('hover');
                     } else {
-                        s.style.color = 'var(--text-muted)';
+                        s.classList.remove('hover');
                     }
                 });
             });
         });
 
         ratingInput.addEventListener('mouseleave', () => {
-            ratingInput.querySelectorAll('.star-btn').forEach(s => {
-                if (parseInt(s.dataset.rating) <= selectedRating) {
-                    s.style.color = 'var(--warning)';
-                } else {
-                    s.style.color = 'var(--text-muted)';
-                }
+            starButtons.forEach(s => {
+                s.classList.remove('hover');
             });
         });
 
@@ -591,9 +672,9 @@ class MusicRecommender {
             // Reset form
             form.reset();
             selectedRating = 0;
-            ratingInput.querySelectorAll('.star-btn').forEach(s => {
+            starButtons.forEach(s => {
                 s.classList.remove('active');
-                s.style.color = 'var(--text-muted)';
+                s.classList.remove('hover');
             });
 
             // Show success feedback
