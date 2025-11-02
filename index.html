@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommender - Discover Your Next Favorite Artist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">
+                <span class="emoji">🎵</span>
+                Music Recommender
+            </h1>
+            <p class="subtitle">Discover your next favorite artist based on your taste</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Panel: Recommendations -->
+            <section class="recommendations-panel">
+                <div class="panel-header">
+                    <h2>Recommended For You</h2>
+                    <button class="btn btn-shuffle" id="shuffleBtn">
+                        <span class="icon">🔄</span>
+                        Shuffle
+                    </button>
+                </div>
+
+                <div id="recommendationsContainer" class="recommendations-grid">
+                    <!-- Recommendations will be dynamically added here -->
+                </div>
+
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-icon">🎸</div>
+                    <h3>Start Rating Artists!</h3>
+                    <p>Rate some artists below to get personalized recommendations</p>
+                </div>
+            </section>
+
+            <!-- Right Panel: Controls -->
+            <aside class="controls-panel">
+                <!-- Add Artist Form -->
+                <div class="card add-artist-card">
+                    <h3 class="card-title">Add New Artist</h3>
+                    <form id="addArtistForm" class="add-artist-form">
+                        <div class="form-group">
+                            <label for="artistName">Artist Name</label>
+                            <input
+                                type="text"
+                                id="artistName"
+                                placeholder="Enter artist name..."
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label>Your Rating</label>
+                            <div class="rating-input" id="addArtistRating">
+                                <button type="button" class="star-btn" data-rating="1">★</button>
+                                <button type="button" class="star-btn" data-rating="2">★</button>
+                                <button type="button" class="star-btn" data-rating="3">★</button>
+                                <button type="button" class="star-btn" data-rating="4">★</button>
+                                <button type="button" class="star-btn" data-rating="5">★</button>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span class="icon">➕</span>
+                            Add Artist
+                        </button>
+                    </form>
+                </div>
+
+                <!-- To Listen List -->
+                <div class="card to-listen-card">
+                    <h3 class="card-title">
+                        <span class="icon">📝</span>
+                        To Listen List
+                        <span class="badge" id="toListenCount">0</span>
+                    </h3>
+                    <div id="toListenList" class="to-listen-list">
+                        <div class="empty-message">No artists in your list yet</div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="card stats-card">
+                    <h3 class="card-title">Your Stats</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="ratedCount">0</div>
+                            <div class="stat-label">Rated</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="avgRating">0</div>
+                            <div class="stat-label">Avg Rating</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="genreCount">0</div>
+                            <div class="stat-label">Genres</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clear Data Button -->
+                <button class="btn btn-secondary btn-block" id="clearDataBtn">
+                    Clear All Data
+                </button>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Recommendation Card Template -->
+    <template id="recommendationCardTemplate">
+        <div class="recommendation-card">
+            <button class="trash-btn" aria-label="Remove recommendation">
+                <span class="icon">🗑️</span>
+            </button>
+
+            <div class="card-content">
+                <h3 class="artist-name"></h3>
+
+                <div class="artist-meta">
+                    <span class="year-badge"></span>
+                    <span class="era-badge"></span>
+                </div>
+
+                <div class="genres-list"></div>
+
+                <div class="themes-list"></div>
+
+                <div class="card-actions">
+                    <div class="rating-section">
+                        <label>Rate this artist:</label>
+                        <div class="rating-stars">
+                            <button class="star-btn" data-rating="1">★</button>
+                            <button class="star-btn" data-rating="2">★</button>
+                            <button class="star-btn" data-rating="3">★</button>
+                            <button class="star-btn" data-rating="4">★</button>
+                            <button class="star-btn" data-rating="5">★</button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-to-listen">
+                        <span class="icon">➕</span>
+                        Add to Listen List
+                    </button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- To Listen Item Template -->
+    <template id="toListenItemTemplate">
+        <div class="to-listen-item">
+            <div class="to-listen-info">
+                <div class="to-listen-name"></div>
+                <div class="to-listen-genres"></div>
+            </div>
+            <button class="to-listen-remove" aria-label="Remove from list">×</button>
+        </div>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>
